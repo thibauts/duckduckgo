@@ -13,6 +13,8 @@ Usage
 
 It can be used as a python module
 
+.. code-block:: pycon
+
   >>> import duckduckgo
   >>> for link in duckduckgo.search('duckduckgo', max_results=10):
   ...     print link
@@ -25,11 +27,16 @@ It can be used as a python module
 
 Or as a command line tool
 
+.. code-block:: bash
+
   $ ddg -n 10 duckduckgo
 
 
 Installation
 ------------
 
+.. code-block:: bash
   $ python setup.py install
+
+
 

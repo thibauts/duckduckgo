@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+import duckduckgo
+import sys
+import getopt
+
+
+def usage():
+	print >>sys.stderr, 'Usage: ddg [options] <keywords>'
+	print >>sys.stderr, '    -n N    return N search results'
+
+
+def main():
+	max_results = 0
+
+	try:
+		optlist, args = getopt.getopt(sys.argv[1:], 'n:')
+	except getopt.GetoptError, err:
+		print >>sys.stderr, str(err)
+		sys.exit(2)
+
+	for o, a in optlist:
+		if o == '-n':
+			max_results = int(a)
+
+	if len(args) < 1:
+		usage()
+		sys.exit(2)
+
+	keywords = args
+
+	for result in duckduckgo.search(keywords, max_results=max_results):
+		print result
+	
+	
+
+if __name__ == '__main__':
+	main()
+
+

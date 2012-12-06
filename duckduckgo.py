@@ -1,5 +1,6 @@
 import requests
 from lxml import html
+import time
 
 def search(keywords, max_results=None):
 	url = 'http://duckduckgo.com/html/'
@@ -16,6 +17,7 @@ def search(keywords, max_results=None):
 		results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
 		for result in results:
 			yield result
+			time.sleep(0.1)
 			yielded += 1
 			if max_results and yielded >= max_results:
 				return

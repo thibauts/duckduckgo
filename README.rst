@@ -1,14 +1,17 @@
+duckduckgo.py
+=============
+
 duckduckgo.py is a simple python module to scrape the duckduckgo search results. The install script will also make available a ddg command line utility that can be conveniently used in a shell pipeline.
 
 A word of warning
-=================
+-----------------
 
 This code is intended as a demonstration and, as all scraping utilities, should be used with great caution. By default the code will pause a few milliseconds each time it yields a result to avoid overloading the DDG servers.
 
 Usage
-=====
+-----
 
-You can use it as a python module
+It can be used as a python module
 
   >>> import duckduckgo
   >>> for link in duckduckgo.search('duckduckgo', max_results=10):
@@ -23,13 +26,10 @@ You can use it as a python module
 Or as a command line tool
 
   $ ddg -n 10 duckduckgo
-  https://duckduckgo.com/
-  https://en.wikipedia.org/wiki/DuckDuckGo
-  https://duckduckgo.com/about.html
-  [...]
+
 
 Installation
-============
+------------
 
-   $ python setup.py install
+  $ python setup.py install
 

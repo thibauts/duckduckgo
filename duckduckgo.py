@@ -3,7 +3,7 @@ from lxml import html
 import time
 
 def search(keywords, max_results=None):
-	url = 'http://duckduckgo.com/html/'
+	url = 'https://duckduckgo.com/html/'
 	params = {
 		'q': keywords,
 		's': '0',
